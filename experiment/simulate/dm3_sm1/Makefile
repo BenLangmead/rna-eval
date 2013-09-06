@@ -15,4 +15,4 @@ $(IGENOMES_DIR)/Drosophila_melanogaster:
 
 # Setup flux to simulate from Drosophila
 genes.fixed.gtf: flux/igenomes_setup.sh $(IGENOMES_DIR)/Drosophila_melanogaster
-	IGENOMES_DIR=$(IGENOMES_DIR) && sh flux/igenomes_setup.sh Drosophila_melanogaster UCSC dm3
+	IGENOMES_DIR=$(IGENOMES_DIR) && . flux/igenomes_setup.sh Drosophila_melanogaster UCSC dm3
