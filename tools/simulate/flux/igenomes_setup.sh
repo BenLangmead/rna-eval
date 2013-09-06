@@ -2,7 +2,7 @@
 
 # e.g., for drosophila: sh igenomes_setup.sh Drosophila_melanogaster UCSC dm3
 
-d=`dirname $0`
+DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 if [ -z "$IGENOMES_DIR" ] ; then
 	if [ -z "$TORNADO_HOME" ] ; then
@@ -46,7 +46,7 @@ rm -f Chromosomes genes.fixed.gtf
 
 ln -s -f $FULL/Sequence/Chromosomes Chromosomes
 
-python $d/gtf_flux_fix.py \
+python $DIR/gtf_flux_fix.py \
 	--gtf $FULL/Annotation/Genes/genes.gtf \
 	--fasta $FULL/Sequence/Chromosomes/*.fa \
 	> genes.fixed.gtf
