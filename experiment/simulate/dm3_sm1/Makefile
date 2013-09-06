@@ -2,11 +2,11 @@ FLUX_DIR=../../../tools/simulate/flux
 IGENOMES_DIR=../../../data/igenomes
 NM=dm3_sm1
 
-$(NM).pro: $(NM).par genes.fixed.gtf flux/flux-simulator
-	flux/flux-simulator -p $<
+$(NM).pro: $(NM).par genes.fixed.gtf flux/flux-simulator/bin/flux-simulator
+	flux/flux-simulator/bin/flux-simulator -p $<
 
 # Copy flux stuff to here
-flux/flux-simulator flux/gtf_flux_fix.py flux/igenomes_setup.sh: $(FLUX_DIR)/copy.sh
+flux/flux-simulator/bin/flux-simulator flux/gtf_flux_fix.py flux/igenomes_setup.sh: $(FLUX_DIR)/copy.sh
 	mkdir -p flux
 	sh $< ./flux
 
